@@ -1,8 +1,6 @@
 # gdown-js
 
-[![npm version](https://img.shields.io/npm/v/gdown-js.svg)](https://www.npmjs.com/package/gdown-js)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
-[![node](https://img.shields.io/node/v/gdown-js.svg)](package.json)
 
 Download files and folders from Google Drive, right from Node.js — no
 browser, no OAuth app registration, no API key.
@@ -38,13 +36,11 @@ the real file.
 
 ## Installation
 
-```bash
-npm install gdown-js
-```
-
-Or, from a local clone:
+This package isn't published to npm yet — install it from a local clone:
 
 ```bash
+git clone https://github.com/<your-username>/gdown-js.git
+cd gdown-js
 npm install
 npm link   # optional: makes the `gdown` command available globally
 ```
@@ -86,7 +82,7 @@ gdown --folder "https://drive.google.com/drive/folders/1FoLdErIDxxxxxxxx" -O ./o
 ### As a library
 
 ```js
-const { download, downloadFolder } = require('gdown-js');
+const { download, downloadFolder } = require('./lib/gdown');
 
 await download('https://drive.google.com/file/d/1AbCDeFGhIJKlmnop/view', {
   output: 'myfile.zip',

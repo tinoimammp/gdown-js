@@ -39,7 +39,7 @@ the real file.
 This package isn't published to npm yet — install it from a local clone:
 
 ```bash
-git clone https://github.com/<your-username>/gdown-js.git
+git clone https://github.com/tinoimammp/gdown-js.git
 cd gdown-js
 npm install
 npm link   # optional: makes the `gdown` command available globally

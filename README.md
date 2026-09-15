@@ -12,6 +12,8 @@ differently from Python — but it aims for the same experience: paste a
 share link, get your file, and don't get stuck on Drive's virus-scan warning
 page for large files.
 
+![Sample successful download](assets/sample-download.jpeg)
+
 ## Why
 
 Google Drive shows an HTML "Google Drive can't scan this file for viruses"

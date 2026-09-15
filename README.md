@@ -81,6 +81,21 @@ Download a whole public folder (experimental):
 gdown --folder "https://drive.google.com/drive/folders/1FoLdErIDxxxxxxxx" -O ./out
 ```
 
+Run a long download in the background with `nohup` (keeps going after you
+close the terminal/SSH session — use `-q` since there's no terminal to
+render the progress bar to):
+
+```bash
+nohup gdown 1AbCDeFGhIJKlmnop -O myfile.zip -q > gdown.log 2>&1 &
+```
+
+Check on it later:
+
+```bash
+tail -f gdown.log      # follow progress/errors
+jobs                    # see if it's still running (same shell session)
+```
+
 ### As a library
 
 ```js

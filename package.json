@@ -1,0 +1,31 @@
+{
+  "name": "gdown-js",
+  "version": "1.0.0",
+  "description": "Node.js port of gdown — download files and folders from Google Drive, with automatic handling of the large-file confirmation page.",
+  "main": "lib/gdown.js",
+  "bin": {
+    "gdown": "bin/gdown.js"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0"
+  },
+  "keywords": [
+    "google-drive",
+    "gdown",
+    "download",
+    "cli"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cli-progress": "^3.12.0",
+    "commander": "^12.1.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

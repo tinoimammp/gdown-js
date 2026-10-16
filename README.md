@@ -117,9 +117,15 @@ viewable ("Anyone with the link") — there's no Drive API / OAuth flow here.
   way to list a public folder's contents by scraping its page; this relies
   on an embedded JS variable (`_DRIVE_ivd`) whose format Google can change
   without notice.
-- Not tested against live Google Drive in this environment (network access
-  here is restricted to package registries); please test locally against a
-  real file/folder link before relying on it.
+- **Folder pages list at most 50 items.** When a folder hits that cap,
+  gdown-js fills in the rest from Drive's `embeddedfolderview` page (tested
+  with up to 100 items). If that fallback fails, you get a warning that the
+  folder may be incomplete instead of losing files silently.
+- **Google Docs/Sheets/Slides/Drawings are exported** as `.docx`/`.xlsx`/
+  `.pptx`/`.png`. Other Google-native types (Forms, Sites, shortcuts, ...)
+  are skipped with a message.
+- In a folder download, a file that fails doesn't stop the rest. Failures
+  are listed in a summary at the end, and the command exits non-zero.
 
 ## Acknowledgements
 

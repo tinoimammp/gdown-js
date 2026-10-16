@@ -51,6 +51,23 @@ npm link   # optional: makes the `gdown` command available globally
 
 ### Command line
 
+The easiest way: run `gdown` with no arguments, then paste links one at a
+time. File and folder links are detected automatically. Press Enter on an
+empty line to quit.
+
+Unless you pass `-O`, every download goes into `./out/` under its original
+name (for a folder, its name on Drive), so nothing gets scattered across the
+current directory.
+
+```
+$ gdown
+Paste a Google Drive file or folder link and press Enter. Empty line to quit.
+
+Link: https://drive.google.com/drive/folders/1FoLdErIDxxxxxxxx
+...
+Link:
+```
+
 Download a file:
 
 ```bash
@@ -63,10 +80,12 @@ By bare ID:
 gdown 1AbCDeFGhIJKlmnop
 ```
 
-Choose the output path:
+Choose the output path, or end it with `/` to save inside a directory under
+the original name:
 
 ```bash
 gdown 1AbCDeFGhIJKlmnop -O myfile.zip
+gdown 1AbCDeFGhIJKlmnop -O downloads/
 ```
 
 Suppress the progress bar and logs:
@@ -75,10 +94,17 @@ Suppress the progress bar and logs:
 gdown 1AbCDeFGhIJKlmnop -q
 ```
 
-Download a whole public folder (experimental):
+Download a whole public folder (experimental). Folder links are detected
+automatically, and the folder is saved as `out/<its name on Drive>`:
 
 ```bash
-gdown --folder "https://drive.google.com/drive/folders/1FoLdErIDxxxxxxxx" -O ./out
+gdown "https://drive.google.com/drive/folders/1FoLdErIDxxxxxxxx"
+```
+
+`--folder` is only needed when you pass a bare folder ID:
+
+```bash
+gdown --folder 1FoLdErIDxxxxxxxx -O ./out
 ```
 
 Run a long download in the background with `nohup` (keeps going after you
